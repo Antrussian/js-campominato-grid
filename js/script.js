@@ -56,12 +56,29 @@ function generaSquareNumerato (numeroIndice) {
 
     wrapper.innerHTML = '';
 
+    
+
 for (let i = 1 ; i <= numeroIndice ; i++ ) {
 
 
     let square = document.createElement('div');
     
     square.classList.add('quadrato');
+
+    if (numeroIndice === 81 )
+    {
+        square.classList.add('medium');
+    }
+    else if ( numeroIndice === 49 ) {
+        square.classList.add('hard');
+    }
+    else if (numeroIndice === 100 ) {
+        square.classList.add('easy');
+    }
+   
+
+
+
 
     square.innerText = i ;
 
