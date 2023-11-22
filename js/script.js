@@ -23,14 +23,29 @@ Proviamo sempre prima con dei console.log() per capire se stiamo ricevendo i dat
 Le validazioni e i controlli possiamo farli anche in un secondo momento.*/
 
 
-let difficoltà = 100;
+
+
+
+let difficolta = 0;
+
+
+let selectlivelloUtente = document.getElementById('livello-utente');
+
+
 
 document.getElementById('start-game').addEventListener('click', function () {
 
-generaSquareNumerato(difficoltà);
+difficolta = parseInt(selectlivelloUtente.value);
+
+generaSquareNumerato(difficolta);
 
 
 });
+
+
+
+
+
 
 
 
