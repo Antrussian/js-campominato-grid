@@ -1,8 +1,15 @@
 /*Consegna
-L'utente clicca su un bottone che genererà una griglia di gioco quadrata.
+L'utente clicca su un bottone 
+che genererà una griglia di gioco quadrata.
+
 Ogni cella ha un numero progressivo, da 1 a 100.
+
 Ci saranno quindi 10 caselle per ognuna delle 10 righe.
-Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed emetto un messaggio in console con il numero della cella cliccata.
+
+Quando l'utente clicca su ogni cella, 
+la cella cliccata si colora di azzurro
+ed emetto un messaggio in console con il numero della cella cliccata.
+
 Bonus
 Aggiungere una select accanto al bottone di generazione, che fornisca una scelta tra tre diversi livelli di difficoltà:
 con difficoltà 1 => 100 caselle, con un numero compreso tra 1 e 100, divise in 10 caselle per 10 righe;
@@ -14,3 +21,49 @@ Ad esempio:
 Di cosa ho bisogno per generare i numeri?
 Proviamo sempre prima con dei console.log() per capire se stiamo ricevendo i dati giusti.
 Le validazioni e i controlli possiamo farli anche in un secondo momento.*/
+
+
+let difficoltà = 100;
+
+document.getElementById('start-game').addEventListener('click', function () {
+
+generaSquareNumerato(difficoltà);
+
+
+});
+
+
+
+
+function generaSquareNumerato (numeroIndice) {
+
+    let wrapper = document.querySelector('.wrapper');
+
+    wrapper.innerHTML = '';
+
+for (let i = 1 ; i <= numeroIndice ; i++ ) {
+
+
+    let square = document.createElement('div');
+    
+    square.classList.add('quadrato');
+
+    square.innerText = i ;
+
+
+    square.addEventListener('click', function () {
+ 
+        square.classList.toggle('lightblue');
+
+        console.log('Cella cliccata:' + i);
+ });
+    
+
+    wrapper.appendChild(square);
+
+
+    
+    }
+    
+
+}
